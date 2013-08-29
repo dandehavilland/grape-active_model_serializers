@@ -11,7 +11,6 @@ require "active_support/json"
 require 'grape/active_model_serializers'
 require 'rspec'
 require 'rack/test'
-require "pry"
 require 'nulldb_rspec'
 # require 'plymouth'
 
