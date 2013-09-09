@@ -17,7 +17,15 @@ module Grape
     end
 
     def default_serializer_options; end
-    def serialization_scope; end
+    def serialization_scope
+      scope_option = route_options[:serialization_scope] || namespace_options[:serialization_scope]
+      
+      if scope_option.is_a?(Symbol)
+        self.send scope_option
+      else
+        scope_option
+      end
+    end
     def _serialization_scope; end
     def url_options; end
   end
