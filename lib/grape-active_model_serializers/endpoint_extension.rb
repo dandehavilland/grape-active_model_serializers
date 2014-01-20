@@ -7,9 +7,9 @@
 module Grape
   module EndpointExtension
     attr_accessor :controller_name
-
+    
     def namespace_options
-      settings[:namespace] ? settings[:namespace].options : {}
+      settings[:namespace] ? settings[:namespace].options : {serialization_scope: :current_user }
     end
 
     def route_options
